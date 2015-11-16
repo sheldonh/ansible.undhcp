@@ -1,0 +1,15 @@
+---
+dependencies:
+  -
+    role: starjuice-ansible.network_interface
+    network_ether_interfaces:
+      -
+        device: "{{ ansible_default_ipv4.interface }}"
+        onboot: "yes"
+        bootproto: static
+        address: "{{ ansible_default_ipv4.address }}"
+        netmask: "{{ ansible_default_ipv4.netmask }}"
+        gateway: "{{ ansible_default_ipv4.gateway }}"
+        dns_nameservers:
+          - 8.8.8.8
+          - 8.8.4.4
